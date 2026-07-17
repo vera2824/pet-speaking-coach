@@ -330,9 +330,13 @@ async function serveStatic(req, res, pathname) {
   try {
     const file = await readFile(filePath);
     const ext = path.extname(filePath);
+    const cacheControl =
+      ext === ".html" || path.basename(filePath) === "sw.js"
+        ? "no-cache"
+        : "public, max-age=3600";
     res.writeHead(200, {
       "Content-Type": MIME_TYPES[ext] || "application/octet-stream",
-      "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=3600"
+      "Cache-Control": cacheControl
     });
     res.end(file);
   } catch {

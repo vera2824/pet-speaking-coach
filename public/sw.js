@@ -1,4 +1,4 @@
-const CACHE = "pet-speaking-coach-v1";
+const CACHE = "pet-speaking-coach-v2";
 const ASSETS = [
   "/",
   "/index.html",
