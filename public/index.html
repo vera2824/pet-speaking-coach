@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7efe2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="PET Coach" />
+    <title>PET Speaking Coach</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topbar" aria-label="App header">
+        <div>
+          <p class="eyebrow">PET Speaking Coach</p>
+          <h1>Hi, Emma</h1>
+        </div>
+        <button id="parentToggle" class="icon-button" type="button" aria-label="Parent report">
+          <span aria-hidden="true">↗</span>
+        </button>
+      </section>
+
+      <section id="kidView" class="kid-view">
+        <div class="mode-strip" role="tablist" aria-label="Practice mode">
+          <button class="mode-button active" data-mode="today" type="button">Today</button>
+          <button class="mode-button" data-mode="photo" type="button">Photo</button>
+          <button class="mode-button" data-mode="mock" type="button">Mock</button>
+        </div>
+
+        <article class="coach-panel">
+          <div class="coach-visual" aria-hidden="true">
+            <img src="/teacher.svg" alt="" />
+            <div class="sound-ring ring-one"></div>
+            <div class="sound-ring ring-two"></div>
+          </div>
+          <div>
+            <p id="topicLabel" class="topic">Today: Weekend</p>
+            <p id="statusText" class="status">Tap Start and speak English with Lily.</p>
+          </div>
+        </article>
+
+        <article id="photoCard" class="photo-card hidden" aria-label="Photo talk picture">
+          <img src="/photo-kitchen.svg" alt="Children making sandwiches in a bright kitchen" />
+          <p>Describe the picture. What are the children doing?</p>
+        </article>
+
+        <section class="subtitle-board" aria-label="Live subtitles">
+          <div id="liveCaption" class="live-caption">Lily will speak here.</div>
+          <div id="transcriptList" class="transcript-list"></div>
+        </section>
+
+        <section class="controls" aria-label="Practice controls">
+          <button id="startButton" class="primary-action" type="button">
+            <span class="mic-dot"></span>
+            Start Speaking
+          </button>
+          <button id="finishButton" class="secondary-action" type="button" disabled>Finish</button>
+        </section>
+
+        <section id="accessPanel" class="access-panel hidden" aria-label="Access code">
+          <label for="accessInput">Family access code</label>
+          <div class="pin-row">
+            <input id="accessInput" autocomplete="off" placeholder="Ask Dad or Mum" />
+            <button id="saveAccessButton" class="secondary-action small" type="button">Save</button>
+          </div>
+        </section>
+
+        <section id="feedbackPanel" class="feedback-panel hidden" aria-label="Practice feedback">
+          <p class="eyebrow">Today’s Stars</p>
+          <h2 id="praiseText">Great job speaking today!</h2>
+          <div class="feedback-grid">
+            <div>
+              <span>Best sentence</span>
+              <strong id="bestSentence">I tried my best today.</strong>
+            </div>
+            <div>
+              <span>Try this</span>
+              <strong id="correctionText">I like playing tennis.</strong>
+            </div>
+            <div>
+              <span>New words</span>
+              <strong id="newWords">usually, weekend, friend</strong>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="parentView" class="parent-view hidden" aria-label="Parent report">
+        <div class="parent-head">
+          <div>
+            <p class="eyebrow">Parent Report</p>
+            <h2>练习记录</h2>
+          </div>
+          <button id="backButton" class="secondary-action small" type="button">Back</button>
+        </div>
+
+        <div id="pinGate" class="pin-gate">
+          <label for="pinInput">输入家长 PIN</label>
+          <div class="pin-row">
+            <input id="pinInput" inputmode="numeric" maxlength="4" placeholder="2580" />
+            <button id="unlockButton" class="secondary-action small" type="button">Open</button>
+          </div>
+        </div>
+
+        <div id="reportContent" class="report-content hidden">
+          <article class="report-card">
+            <h3>本周摘要</h3>
+            <p id="summaryZh">还没有完成练习。</p>
+          </article>
+          <article class="report-card score-card">
+            <h3>PET 口语能力</h3>
+            <div id="scoreRows"></div>
+          </article>
+          <article class="report-card">
+            <h3>下次建议</h3>
+            <p id="nextPracticeZh">完成一次练习后会显示建议。</p>
+          </article>
+          <article class="report-card">
+            <h3>文字稿</h3>
+            <div id="parentTranscript" class="parent-transcript"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <audio id="remoteAudio" autoplay playsinline></audio>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

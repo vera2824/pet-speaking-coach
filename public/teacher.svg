@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="Friendly English coach">
+  <circle cx="130" cy="130" r="124" fill="#f4ead8"/>
+  <circle cx="130" cy="104" r="61" fill="#ffd7ba"/>
+  <path d="M75 105c4-48 34-72 77-66 35 5 54 32 54 67-23-9-45-23-62-46-11 23-36 39-69 45z" fill="#6f4e37"/>
+  <circle cx="107" cy="110" r="8" fill="#24302f"/>
+  <circle cx="153" cy="110" r="8" fill="#24302f"/>
+  <path d="M111 138c13 13 27 13 40 0" fill="none" stroke="#24302f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M50 234c14-54 45-82 80-82s66 28 80 82" fill="#5aa897"/>
+  <path d="M89 184h82l-18 50h-46z" fill="#fffaf1"/>
+  <path d="M84 76c-24 16-38 42-37 78" fill="none" stroke="#87a8d8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M213 154c1-36-13-62-37-78" fill="none" stroke="#87a8d8" stroke-width="10" stroke-linecap="round"/>
+</svg>

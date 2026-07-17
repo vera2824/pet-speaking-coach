@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: pet-speaking-coach
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: HOST
+        value: 0.0.0.0
+      - key: REALTIME_MODEL
+        value: gpt-realtime-2.1
+      - key: REPORT_MODEL
+        value: gpt-5.5
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: APP_ACCESS_CODE
+        sync: false
