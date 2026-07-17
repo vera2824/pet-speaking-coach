@@ -10,23 +10,25 @@ const state = {
   report: null
 };
 
+const childName = "Chris";
+
 const modeMeta = {
   today: {
     label: "Today: Weekend",
     status: "Tap Start and speak English with Lily.",
-    opening: "Start the lesson now. First greet Emma, then ask: What do you usually do on Saturday?"
+    opening: `Start the lesson now. First greet ${childName}, then ask: What do you usually do on Saturday?`
   },
   photo: {
     label: "Photo Talk",
     status: "Look at the picture, then tell Lily what you can see.",
     opening:
-      "Start PET Speaking Part 2 practice. Ask Emma to describe the kitchen picture on screen. Speak slowly."
+      `Start PET Speaking Part 2 practice. Ask ${childName} to describe the kitchen picture on screen. Speak slowly.`
   },
   mock: {
     label: "Mini Mock",
     status: "Try a short PET speaking test with Lily.",
     opening:
-      "Start a friendly mini PET speaking test. Begin with two personal questions, then guide Emma through the next parts."
+      `Start a friendly mini PET speaking test for ${childName}. Begin with two personal questions, then guide her through the next parts.`
   }
 };
 
@@ -258,7 +260,7 @@ function renderTranscript() {
   for (const turn of state.transcript.slice(-8)) {
     const div = document.createElement("div");
     div.className = `turn ${turn.role === "child" ? "child" : "lily"}`;
-    div.innerHTML = `<strong>${turn.role === "child" ? "Emma" : "Lily"}</strong><span></span>`;
+    div.innerHTML = `<strong>${turn.role === "child" ? childName : "Lily"}</strong><span></span>`;
     div.querySelector("span").textContent = turn.text;
     els.transcriptList.append(div);
   }
@@ -391,7 +393,7 @@ function renderParentReport(session) {
   for (const turn of session.transcript || []) {
     const div = document.createElement("div");
     div.className = `turn ${turn.role === "child" ? "child" : "lily"}`;
-    div.innerHTML = `<strong>${turn.role === "child" ? "Emma" : "Lily"}</strong><span></span>`;
+    div.innerHTML = `<strong>${turn.role === "child" ? childName : "Lily"}</strong><span></span>`;
     div.querySelector("span").textContent = turn.text;
     els.parentTranscript.append(div);
   }
